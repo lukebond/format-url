@@ -1,6 +1,6 @@
 {
   "name": "format-url",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Light wrapper around Node.js url.format() to make life a little easier",
   "main": "index.js",
   "scripts": {
