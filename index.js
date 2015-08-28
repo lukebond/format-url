@@ -1,6 +1,7 @@
 "use strict";
 
 var url = require('url');
+var qs = require('qs');
 
 module.exports = function formatUrl(u, query) {
   var protocol = 'http';
@@ -16,5 +17,9 @@ module.exports = function formatUrl(u, query) {
     host = parts[0];
     path = u.substr(u.indexOf(parts[1]));
   }
+  
+  if( typeof query === "string" )
+    query = qs.parse(query);
+  
   return url.format({ host: host, pathname: path, protocol: protocol, query: query });
 };
