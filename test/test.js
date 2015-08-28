@@ -30,3 +30,9 @@ test('Works with port and path but without protocol', function (t) {
   t.equal(url, 'http://127.0.0.0:8080/path/to/things');
   t.end();
 });
+
+test('Accept a query object', function(t){
+  var url = urlFormat('foo', { bar: 1, biz: 2 });
+  t.equal(url, 'http://foo?bar=1&biz=2');
+  t.end();
+});

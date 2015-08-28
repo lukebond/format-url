@@ -1,6 +1,8 @@
+"use strict";
+
 var url = require('url');
 
-module.exports = function formatUrl(u) {
+module.exports = function formatUrl(u, query) {
   var protocol = 'http';
   var protoMatch = u.match(/^http[s]*:\/\//);
   if (protoMatch) {
@@ -14,5 +16,5 @@ module.exports = function formatUrl(u) {
     host = parts[0];
     path = u.substr(u.indexOf(parts[1]));
   }
-  return url.format({ host: host, pathname: path, protocol: protocol });
+  return url.format({ host: host, pathname: path, protocol: protocol, query: query });
 };
