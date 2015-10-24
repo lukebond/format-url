@@ -36,3 +36,9 @@ test('Accept a query object', function(t){
   t.equal(url, 'http://foo?bar=1&biz=2');
   t.end();
 });
+
+test('Accept a query string', function(t){
+  var url = urlFormat('foo', "one=1&two=2");
+  t.equal(url, 'http://foo?one=1&two=2');
+  t.end();
+});
